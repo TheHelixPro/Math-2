@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19141.11" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Level" representedClassName=".Level" isAbstract="YES" syncable="YES">
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isLock" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Task" inverseName="levels" inverseEntity="Task"/>
+    </entity>
+    <entity name="Task" representedClassName=".Task" isAbstract="YES" syncable="YES">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="isLock" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isMain" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="levels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Level" inverseName="task" inverseEntity="Level"/>
+    </entity>
+    <elements>
+        <element name="Level" positionX="-3103.655578613281" positionY="-1286.02182006836" width="128" height="89"/>
+        <element name="Task" positionX="-3514.091003417969" positionY="-1414.159881591797" width="128" height="134"/>
+    </elements>
+</model>
